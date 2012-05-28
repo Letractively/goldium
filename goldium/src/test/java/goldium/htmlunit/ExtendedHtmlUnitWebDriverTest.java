@@ -2,6 +2,6 @@ package goldium.htmlunit;
 
 public class ExtendedHtmlUnitWebDriverTest {
 
-	private ExternalHtmlUnitWebDriver driver;
+	private ExternalHtmlUnitDriver driver;
 
 }
