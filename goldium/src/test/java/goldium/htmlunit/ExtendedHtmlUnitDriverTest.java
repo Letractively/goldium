@@ -5,6 +5,8 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.is;
 
+import goldium.ExtendedWebDriver;
+
 import java.util.Map;
 
 import org.junit.Before;

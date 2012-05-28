@@ -1,4 +1,4 @@
-package goldium.htmlunit;
+package goldium;
 
 import java.util.Map;
 
