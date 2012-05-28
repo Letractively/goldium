@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public interface ExtendedWebDriver extends WebDriver {
 
-	Map<String, String> getResponseHeaders(String url);
+	Map<String, String> getResponseHeaders();
 
-	String getResponseHeader(String url, String name);
+	String getResponseHeaderValue(String name);
 
 }
