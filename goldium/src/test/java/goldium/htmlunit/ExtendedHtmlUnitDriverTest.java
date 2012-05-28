@@ -9,6 +9,7 @@ import goldium.ExtendedWebDriver;
 
 import java.util.Map;
 
+import org.apache.http.HttpStatus;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -46,4 +47,14 @@ public class ExtendedHtmlUnitDriverTest {
 		assertThat(headerValue, is(equalTo("codesite")));
 	}
 
+	@Test
+	public void shouldGet404StatusCode() {
+		driver.get("http://www.google.com/404");
+		assertThat(driver.getStatusCode(), is(equalTo(HttpStatus.SC_NOT_FOUND)));
+	}
+
+	@Test
+	public void shouldGet200StatusCode() {
+		assertThat(driver.getStatusCode(), is(equalTo(HttpStatus.SC_OK)));
+	}
 }

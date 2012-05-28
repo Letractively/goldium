@@ -28,6 +28,10 @@ public class ExtendedHtmlUnitDriver extends HtmlUnitDriver implements ExtendedWe
 		return getLastPageWebResponse().getResponseHeaderValue(name);
 	}
 
+	public int getStatusCode() {
+		return getLastPageWebResponse().getStatusCode();
+	}
+
 	private WebResponse getLastPageWebResponse() {
 		return lastPage().getWebResponse();
 	}

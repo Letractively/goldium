@@ -10,4 +10,6 @@ public interface ExtendedWebDriver extends WebDriver {
 
 	String getResponseHeaderValue(String name);
 
+	int getStatusCode();
+
 }
