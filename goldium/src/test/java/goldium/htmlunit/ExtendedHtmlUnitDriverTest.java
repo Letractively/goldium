@@ -4,6 +4,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasEntry;
 import static org.hamcrest.Matchers.is;
+import static org.hamcrest.Matchers.not;
 import static org.hamcrest.Matchers.nullValue;
 import goldium.ExtendedWebDriver;
 
@@ -56,5 +57,20 @@ public class ExtendedHtmlUnitDriverTest {
 	@Test
 	public void shouldGet200StatusCode() {
 		assertThat(driver.getStatusCode(), is(equalTo(HttpStatus.SC_OK)));
+	}
+
+	@Test
+	public void shouldSetRequestHeader() {
+		driver.addRequestHeader("Authorization", "Basic dXNlcjE6dXNlcjE=");
+		driver.get("http://test.webdav.org/auth-basic/");
+		assertThat(driver.getStatusCode(), is(not(equalTo(HttpStatus.SC_UNAUTHORIZED))));
+	}
+
+	@Test
+	public void shouldRemoveRequestHeader() {
+		driver.addRequestHeader("Authorization", "Basic dXNlcjE6dXNlcjE=");
+		driver.removeRequestHeader("Authorization");
+		driver.get("http://test.webdav.org/auth-basic/");
+		assertThat(driver.getStatusCode(), is(equalTo(HttpStatus.SC_UNAUTHORIZED)));
 	}
 }

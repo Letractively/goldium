@@ -12,4 +12,8 @@ public interface ExtendedWebDriver extends WebDriver {
 
 	int getStatusCode();
 
+	void addRequestHeader(String name, String value);
+
+	void removeRequestHeader(String name);
+
 }
