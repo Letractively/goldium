@@ -13,7 +13,7 @@ import com.gargoylesoftware.htmlunit.Page;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.util.NameValuePair;
 
-public final class ExtendedHtmlUnitDriver extends HtmlUnitDriver implements ExtendedWebDriver {
+public class ExtendedHtmlUnitDriver extends HtmlUnitDriver implements ExtendedWebDriver {
 
 	public Map<String, String> getResponseHeaders(final String url) {
 		final List<NameValuePair> nameValuePairs = getWebResponse(url).getResponseHeaders();
