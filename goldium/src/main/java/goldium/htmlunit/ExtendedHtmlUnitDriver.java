@@ -19,6 +19,14 @@ import com.gargoylesoftware.htmlunit.util.NameValuePair;
  */
 public class ExtendedHtmlUnitDriver extends HtmlUnitDriver implements ExtendedWebDriver {
 
+	public ExtendedHtmlUnitDriver() {
+		super();
+	}
+
+	public ExtendedHtmlUnitDriver(final boolean enableJavaScript) {
+		super(enableJavaScript);
+	}
+
 	public Map<String, String> getResponseHeaders() {
 		final List<NameValuePair> nameValuePairs = getLastPageWebResponse().getResponseHeaders();
 		return nameValuePairListToMap(nameValuePairs);

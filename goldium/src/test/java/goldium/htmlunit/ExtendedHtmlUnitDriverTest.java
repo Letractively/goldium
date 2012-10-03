@@ -73,4 +73,17 @@ public class ExtendedHtmlUnitDriverTest {
 		driver.get("http://test.webdav.org/auth-basic/");
 		assertThat(driver.getStatusCode(), is(equalTo(HttpStatus.SC_UNAUTHORIZED)));
 	}
+
+	@Test
+	public void shouldSetJavascriptEnabledThroughConstructor() {
+		final ExtendedHtmlUnitDriver javaScriptEnabledDriver = new ExtendedHtmlUnitDriver(true);
+		assertThat(javaScriptEnabledDriver.isJavascriptEnabled(), is(true));
+	}
+
+	@Test
+	public void shouldSetJavascriptEnabledThroughMethod() {
+		final ExtendedHtmlUnitDriver javaScriptEnabledDriver = new ExtendedHtmlUnitDriver();
+		javaScriptEnabledDriver.setJavascriptEnabled(true);
+		assertThat(javaScriptEnabledDriver.isJavascriptEnabled(), is(true));
+	}
 }
